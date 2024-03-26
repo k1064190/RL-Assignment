@@ -35,6 +35,8 @@ def parseArgs():
 
 if __name__ == "__main__":
     # load expert policy
+    os.environ["MUJOCO_GL"] = 'egl'
+
     args = parseArgs()
 
     seed = args.seed

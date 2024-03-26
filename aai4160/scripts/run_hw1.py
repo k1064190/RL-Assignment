@@ -1,5 +1,5 @@
 """
-Runs behavior cloning and DAgger for homework 1
+uns behavior cloning and DAgger for homework 1
 Hyperparameters for the experiment are defined in main()
 """
 
@@ -109,6 +109,8 @@ def main():
     parser.add_argument('--save_params', action='store_true')
     parser.add_argument('--seed', type=int, default=1)
     args = parser.parse_args()
+
+    os.environ["MUJOCO_GL"]="egl"
 
     # convert args to dictionary
     params = vars(args)
