@@ -130,13 +130,13 @@ class BCTrainer:
             print("\n\n********** Iteration %i ************"%itr)
 
             # decide if videos should be rendered/logged at this iteration
-            if self.params['video_log_freq'] == 0 or (itr % self.params['video_log_freq'] == 0 and self.params['video_log_freq'] != -1):
+            if (self.params['video_log_freq'] == 0) or (itr % self.params['video_log_freq'] == 0 and self.params['video_log_freq'] != -1):
                 self.log_video = True
             else:
                 self.log_video = False
 
             # decide if metrics should be logged
-            if self.params['scalar_log_freq'] == 0 or itr % self.params['scalar_log_freq'] == 0:
+            if (self.params['scalar_log_freq'] == 0) or (itr % self.params['scalar_log_freq'] == 0):
                 self.log_metrics = True
             else:
                 self.log_metrics = False
