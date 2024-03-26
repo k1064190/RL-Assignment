@@ -35,7 +35,11 @@ def parseArgs():
 
 if __name__ == "__main__":
     # load expert policy
-    os.environ["MUJOCO_GL"] = 'egl'
+
+    try:
+        os.environ["MUJOCO_GL"] = 'egl'
+    except RuntimeError:
+        print("Error setting MUJOCO_GL")
 
     args = parseArgs()
 

@@ -110,7 +110,10 @@ def main():
     parser.add_argument('--seed', type=int, default=1)
     args = parser.parse_args()
 
-    os.environ["MUJOCO_GL"]="egl"
+    try:
+        os.environ["MUJOCO_GL"]="egl"
+    except RuntimeError:
+        print("Error setting MUJOCO_GL")
 
     # convert args to dictionary
     params = vars(args)
